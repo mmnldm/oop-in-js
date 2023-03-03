@@ -8,6 +8,7 @@ const alien0 = {
 
 alien0.phrase();
 // * Class Objects 
+
 class Alien {
     constructor(name,phrase){
         this.name = name,
@@ -46,3 +47,25 @@ const robot1 = new Robot("Lien", "I'm Lien the Robot");
 const bug1 = new Bug("Crusoe", "I'm Crusoe the Bug");
 
 bug1.sayPhrase();
+
+// * Inheritance in OOP 
+
+class Person{
+    constructor(name,age){
+        this.name =  name;
+        this.age =  age;
+    }
+}
+
+class Lesbian extends Person{
+    constructor(name,age,type){
+        super(name,age)
+        this.type = type;
+    }
+    identify(){
+        console.log(`I identify as ${this.type}`);
+    }
+}
+
+let kehlani = new Lesbian("Kehlani", 30, "Femme");
+kehlani.identify();
