@@ -26,45 +26,30 @@ class Enemy extends Character{
     attack = () => console.log(`I am attack with this ${this.power}`)
 }
 class Alien extends Enemy {
-    constructor(name,phrase,power,speed){
+    //* Exclusive property for this object => Encapsulation
+    #birthYear
+
+    constructor(name,phrase,power,speed,birthYear){
         super(power,speed),
         this.name = name,
         this.phrase = phrase,
         this.species = "alien"
+        this.#birthYear = birthYear
     }
     fly = () => console.log("ZIiiiiinnnnnnnnnggggg!")
     sayPhrase = () => console.log(this.phrase);
+    attack = () => console.log("Now I do what I want, Now I do what I want");
+    howOld = () => console.log(`I was born in ${this.#birthYear}`)
 }
 
-class Bug{
-    constructor(name,phrase){
-        this.name = name,
-        this.phrase = phrase,
-        this.species = "bug"
-    }
-    hide = () => console.log("You can't catch me now!")
-    sayPhrase = () => console.log(this.phrase)
-}
-
-class Robot{
-    constructor (name,phrase){
-        this.name = name
-        this.phrase = phrase
-        this.species = "robot"
-    }
-    transform = () => console.log("Optimus prime!")
-    sayPhrase = () => console.log(this.phrase)
-}
 
 // * Instantiating classes
-const alien1 = new Alien("Ali", "I'm Ali the Alien",10,20);
+const alien1 = new Alien("Ali", "I'm Ali the Alien",10,20,2000);
 // * We use the "new" keyword followed by the corresponding class name
 // * and pass it the corresponding parameters according to what was declared in the class constructor function
-const robot1 = new Robot("Lien", "I'm Lien the Robot");
-const bug1 = new Bug("Crusoe", "I'm Crusoe the Bug");
-
-bug1.sayPhrase();
 alien1.attack();
+alien1.howOld();
+console.log(alien1);
 
 // * Inheritance in OOP 
 
@@ -89,4 +74,4 @@ class Lesbian extends Person{
 let kehlani = new Lesbian("Kehlani", 30, "Femme");
 kehlani.identify();
 
-// * Inheriting from Grandparent to Parent to Child class
+// * Encapsulation 
