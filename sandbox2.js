@@ -8,9 +8,26 @@ const alien0 = {
 
 alien0.phrase();
 // * Class Objects 
+// * Grandparent Class 
+class Character{
+    constructor(speed){
+        this.speed = speed;
+    }
+    move = () => console.log(`I am moving at ${this.speed} speed`);
+}
 
-class Alien {
-    constructor(name,phrase){
+// * Parent Class
+class Enemy extends Character{
+    constructor(power,speed){
+        super(speed),
+        this.power = power;
+    }
+
+    attack = () => console.log(`I am attack with this ${this.power}`)
+}
+class Alien extends Enemy {
+    constructor(name,phrase,power,speed){
+        super(power,speed),
         this.name = name,
         this.phrase = phrase,
         this.species = "alien"
@@ -40,15 +57,17 @@ class Robot{
 }
 
 // * Instantiating classes
-const alien1 = new Alien("Ali", "I'm Ali the Alien");
+const alien1 = new Alien("Ali", "I'm Ali the Alien",10,20);
 // * We use the "new" keyword followed by the corresponding class name
 // * and pass it the corresponding parameters according to what was declared in the class constructor function
 const robot1 = new Robot("Lien", "I'm Lien the Robot");
 const bug1 = new Bug("Crusoe", "I'm Crusoe the Bug");
 
 bug1.sayPhrase();
+alien1.attack();
 
 // * Inheritance in OOP 
+
 
 class Person{
     constructor(name,age){
@@ -69,3 +88,5 @@ class Lesbian extends Person{
 
 let kehlani = new Lesbian("Kehlani", 30, "Femme");
 kehlani.identify();
+
+// * Inheriting from Grandparent to Parent to Child class
