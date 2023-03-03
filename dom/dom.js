@@ -21,16 +21,28 @@ var header = document.getElementById("main-header");
 // header.style.borderBottom = 'solid 3px #000';
 
 // * GETELEMENTSBYCLASSNAME
-let items = document.getElementsByClassName('list-group-item');
-console.log(items);
-console.log(items[1]);
-items[1].textContent = 'Changed';
-items[2].style.fontWeight = 'bold';
+// let items = document.getElementsByClassName('list-group-item');
+// console.log(items);
+// console.log(items[1]);
+// items[1].textContent = 'Changed';
+// items[2].style.fontWeight = 'bold';
+
+// // items.style.backgroundColor = '#000';
+
+// for(var i = 0;i < items.length; i++ ){
+//     items[i].style.backgroundColor = '#fff';
+// }
+
+// * GETELEMENTSBYTAGNAME 
+let li = document.getElementsByTagName('li');
+console.log(li);
+console.log(li[1]);
+li[1].textContent = 'Changed';
+li[2].style.fontWeight = 'bold';
 
 // items.style.backgroundColor = '#000';
 
-for(var i = 0;i < items.length; i++ ){
-    items[i].style.backgroundColor = '#fff';
+for(var i = 0;i < li.length; i++ ){
+    li[i].style.backgroundColor = '#fff';
 }
-
 
